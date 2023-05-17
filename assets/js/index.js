@@ -1,6 +1,37 @@
 var projectList = [
     {
         projectId: 1,
+        projectName: "Chattanooga Auto Square",
+        Categroy: "Website Development",
+        projectDate: "5/16/2023",
+        Client: "",
+        projectUrl: "https://www.chattanoogaautosquare.com",
+        description: "Online platform of a car dealership located in Chattanooga, Tennessee, USA. The purpose of the website is to provide customers with information about the dealership's inventory of new and used vehicles, financing options, and automotive services. Customers can browse the website to find the car of their choice, schedule a test drive, apply for financing, and even value their trade-in vehicle. The website also includes information about the dealership's team, hours of operation, and location. Overall, the purpose of the website is to facilitate the process of buying a car and provide a seamless customer experience.",
+        imageList: [
+            "assets/img/portfolio/auto/1.png",
+            "assets/img/portfolio/auto/2.png"
+        ]
+
+    },
+    {
+        projectId: 1,
+        projectName: "ARD-PRO",
+        Categroy: "Web Development",
+        projectDate: "5/16/2023",
+        Client: "",
+        projectUrl: "",
+        description: "SPEDPro an automated system to find and manage cases for special-needs students across the entire Texas State. The SPEDPro system bring the student’s case information to teachers, parents, diagnosticians, case specialists and representatives of relevant government authorities from identification to actual deployment of the goal-based study plan for the special-needs students at the school.",
+        imageList: [
+            "assets/img/portfolio/ard-pro/1.webp",
+            "assets/img/portfolio/ard-pro/2.webp",
+            "assets/img/portfolio/ard-pro/3.webp",
+            "assets/img/portfolio/ard-pro/4.webp",
+            "assets/img/portfolio/ard-pro/5.webp"
+        ]
+
+    },
+    {
+        projectId: 2,
         projectName: "AOTUTOR",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
@@ -16,7 +47,7 @@ var projectList = [
 
     },
     {
-        projectId: 2,
+        projectId: 3,
         projectName: "Nova",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
@@ -32,7 +63,7 @@ var projectList = [
 
     },
     {
-        projectId: 2,
+        projectId: 4,
         projectName: "B-SMS",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
@@ -50,6 +81,7 @@ var projectList = [
 ];
 
 function functionToCall() {
+    console.log("This function is called when the dom is laoded");
     let portfolioSection = document.getElementById("portfolio-section");
     let portfolioSectionHtml = "";
     for (let i = 0; i < projectList?.length; i++) {
@@ -113,5 +145,7 @@ function loadProjectDetail() {
         let projectDescription = document.getElementById("project-description");
         projectDescription.innerHTML = projectData.description;
         //#endregion
+
+
     }
 }
