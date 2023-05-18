@@ -1,6 +1,42 @@
 var projectList = [
     {
         projectId: 1,
+        projectName: "O.M.Management",
+        Categroy: "Website Development",
+        projectDate: "5/16/2023",
+        Client: "",
+        projectUrl: "https://www.ommanagement.com",
+        description: `OM Management, an organization that provides management services and solutions to 
+        businesses. The company focuses on assisting companies in various aspects of their operations, 
+        including project management, resource allocation, and strategic planning.`,
+        imageList: [
+            "assets/img/portfolio/om-manage/1.png",
+            "assets/img/portfolio/om-manage/2.png",
+            "assets/img/portfolio/om-manage/3.png"
+        ]
+
+    },
+    {
+        projectId: 2,
+        projectName: "Baby Shark",
+        Categroy: "Website Development",
+        projectDate: "5/16/2023",
+        Client: "",
+        projectUrl: "https://www.babyshark.pk",
+        description: `BabyShark.pk aims to revolutionize the vision of retail shopping for parents and kids across Pakistan.
+                      By operating online, BabyShark.pk provides convenience for parents and caregivers to shop for children's 
+                      clothing from the comfort of their homes. The website may offer user-friendly navigation, clear product 
+                      images, detailed descriptions, and secure payment options to enhance the shopping experience.`,
+        imageList: [
+            "assets/img/portfolio/baby/1.png",
+            "assets/img/portfolio/baby/2.png",
+            "assets/img/portfolio/baby/3.png",
+            "assets/img/portfolio/baby/4.png",
+        ]
+
+    },
+    {
+        projectId: 6,
         projectName: "Chattanooga Auto Square",
         Categroy: "Website Development",
         projectDate: "5/16/2023",
@@ -14,7 +50,7 @@ var projectList = [
 
     },
     {
-        projectId: 1,
+        projectId: 7,
         projectName: "ARD-PRO",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
@@ -31,7 +67,7 @@ var projectList = [
 
     },
     {
-        projectId: 2,
+        projectId: 8,
         projectName: "AOTUTOR",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
@@ -47,7 +83,7 @@ var projectList = [
 
     },
     {
-        projectId: 3,
+        projectId: 9,
         projectName: "Nova",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
@@ -63,13 +99,13 @@ var projectList = [
 
     },
     {
-        projectId: 4,
+        projectId: 10,
         projectName: "B-SMS",
         Categroy: "Web Development",
         projectDate: "5/16/2023",
         Client: "",
         projectUrl: "",
-        description: "Software application that enables allow .",
+        description: "A bulk SMS sender website is a platform that enables users to send large volumes of SMS messages to multiple recipients simultaneously. These websites are commonly used by businesses, organizations, and individuals who need to send messages to a large audience quickly and efficiently.",
         imageList: [
             "assets/img/portfolio/bulk-sms/1.png",
             "assets/img/portfolio/bulk-sms/2.png",
@@ -81,7 +117,6 @@ var projectList = [
 ];
 
 function functionToCall() {
-    console.log("This function is called when the dom is laoded");
     let portfolioSection = document.getElementById("portfolio-section");
     let portfolioSectionHtml = "";
     for (let i = 0; i < projectList?.length; i++) {
@@ -136,7 +171,7 @@ function loadProjectDetail() {
         }
 
         if (projectData.projectUrl?.length > 0) {
-            projectInfoHtml += `<li><strong>Client</strong>: ${projectData.projectUrl}</li>`;
+            projectInfoHtml += `<li><strong>Project URL</strong>:   <a href="${projectData.projectUrl}">${projectData.projectUrl}</a></li>`;
         }
         projectInfo.innerHTML = projectInfoHtml;
         //#endregion
