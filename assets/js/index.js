@@ -91,10 +91,10 @@ var projectList = [
         projectUrl: "",
         description: "Software application that enables hotel managers to streamline their daily operations, manage bookings, and maintain customer data in an efficient manner. It includes features such as room reservations, check-in and check-out procedures, inventory management, billing and payment processing, employee management, and reporting.",
         imageList: [
+            "assets/img/portfolio/nova/1.png",
             "assets/img/portfolio/nova/2.png",
             "assets/img/portfolio/nova/3.png",
-            "assets/img/portfolio/nova/4.png",
-            "assets/img/portfolio/nova/5.png"
+            "assets/img/portfolio/nova/4.png"
         ]
 
     },
@@ -107,34 +107,76 @@ var projectList = [
         projectUrl: "",
         description: "A bulk SMS sender website is a platform that enables users to send large volumes of SMS messages to multiple recipients simultaneously. These websites are commonly used by businesses, organizations, and individuals who need to send messages to a large audience quickly and efficiently.",
         imageList: [
-            "assets/img/portfolio/bulk-sms/1.png",
             "assets/img/portfolio/bulk-sms/2.png",
             "assets/img/portfolio/bulk-sms/3.png",
-            "assets/img/portfolio/bulk-sms/4.png"
+            "assets/img/portfolio/bulk-sms/4.png",
+            "assets/img/portfolio/bulk-sms/5.png"
         ]
 
     }
 ];
 
-function functionToCall() {
-    let portfolioSection = document.getElementById("portfolio-section");
-    let portfolioSectionHtml = "";
-    for (let i = 0; i < projectList?.length; i++) {
-        let projectInfo = projectList[i];
-        portfolioSectionHtml += ` <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src=${projectInfo.imageList[0]} class="img-fluid portfolio-image" alt="">
-            <div class="portfolio-links">
-              <a href=${projectInfo.imageList[0]} data-gallery="portfolioGallery"
-                class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html?projectId=${projectInfo.projectId}"  title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>`;
+var skillList =[
+    {
+        skillName:"HTML",
+        imageUrl:"assets/img/portfolio/skills/html5.png"
+    },
+    {
+        skillName:"CSS3",
+        imageUrl:"assets/img/portfolio/skills/css3.png"
+    },
+    {
+        skillName:"Boostrap",
+        imageUrl:"assets/img/portfolio/skills/bootstrap.png"
+    },
+    
+    {
+        skillName:"Javascript",
+        imageUrl:"assets/img/portfolio/skills/javascript.png"
+    },
+    {
+        skillName:"Jquery",
+        imageUrl:"assets/img/portfolio/skills/jquery.png"
+    },
+ 
 
+    {
+        skillName:"Angular 2+",
+        imageUrl:"assets/img/portfolio/skills/angular.png"
+    },
+    {
+        skillName:"React.js",
+        imageUrl:"assets/img/portfolio/skills/react.png"
+    },
+    {
+        skillName:"Vue.js",
+        imageUrl:"assets/img/portfolio/skills/vue.png"
+    },
+    {
+        skillName:"Node Js",
+        imageUrl:"assets/img/portfolio/skills/node.png"
+    },
+    {
+        skillName:"Express Js",
+        imageUrl:"assets/img/portfolio/skills/express.png"
+    },
+    {
+        skillName:"SQL",
+        imageUrl:"assets/img/portfolio/skills/sql.png"
+    },
+    {
+        skillName:"Green Plum",
+        imageUrl:"assets/img/portfolio/skills/greenplum.png"
+    },
+    {
+        skillName:"Click House",
+        imageUrl:"assets/img/portfolio/skills/clickhouse.png"
     }
+]
 
-    portfolioSection.innerHTML += portfolioSectionHtml;
+function functionToCall() {
+   this.addProjectIntoTheProfolio();
+   this.addSkillsIntoSkillSection();
 }
 
 
@@ -184,3 +226,59 @@ function loadProjectDetail() {
 
     }
 }
+
+//#region Adding Project List into the portfolio section of the website.
+function addProjectIntoTheProfolio(){
+ //#region adding project into the portfolio section from projectList array
+ let portfolioSection = document.getElementById("portfolio-section");
+ let portfolioSectionHtml = "";
+ for (let i = 0; i < projectList?.length; i++) {
+     let projectInfo = projectList[i];
+     portfolioSectionHtml += ` <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+       <div class="portfolio-wrap">
+         <img src=${projectInfo.imageList[0]} class="img-fluid portfolio-image" alt="">
+         <div class="portfolio-links">
+           <a href=${projectInfo.imageList[0]} data-gallery="portfolioGallery"
+             class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+           <a href="portfolio-details.html?projectId=${projectInfo.projectId}"  title="More Details"><i class="bx bx-link"></i></a>
+         </div>
+       </div>
+     </div>`;
+
+ }
+ portfolioSection.innerHTML += portfolioSectionHtml;
+ //#endregion
+}
+//#endregion
+
+//#region add skills into the skills section 
+function addSkillsIntoSkillSection(){
+    
+
+    let skillSections = document.getElementById("skill-sections");
+    let skillListHtml ="";
+   for(let i=0;i<skillList?.length;i++){
+    skillListHtml += `<div class="col-sm-12  col-md-4 col-lg-3" data-aos="fade-up">
+    <div class="card">
+        <div class="row m-l-0">
+        <div class="col-sm-4">
+          <img src=${skillList[i].imageUrl}
+            class="skill-image rounded-start" 
+            
+            alt="..."
+          />
+        </div>
+        <div class="col-sm-8  card-body">
+       
+            <h4 class="card-title">${skillList[i].skillName}</h4>
+     
+        </div>
+      </div>
+    </div>
+  </div>`
+   }
+
+   skillSections.innerHTML = skillListHtml;
+}
+
+//#endregion
