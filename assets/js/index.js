@@ -160,16 +160,24 @@ var skillList =[
         skillName:"Express Js",
         imageUrl:"assets/img/portfolio/skills/express.png"
     },
+     {
+        skillName:"Asp.net",
+        imageUrl:"assets/img/portfolio/skills/asp.net.png"
+    },
+     {
+        skillName:"Asp.net Core",
+        imageUrl:"assets/img/portfolio/skills/.netcore.png"
+    },
     {
         skillName:"SQL",
         imageUrl:"assets/img/portfolio/skills/sql.png"
     },
     {
-        skillName:"Green Plum",
+        skillName:"GreenPlum",
         imageUrl:"assets/img/portfolio/skills/greenplum.png"
     },
     {
-        skillName:"Click House",
+        skillName:"ClickHouse",
         imageUrl:"assets/img/portfolio/skills/clickhouse.png"
     }
 ]
@@ -261,14 +269,14 @@ function addSkillsIntoSkillSection(){
     skillListHtml += `<div class="col-sm-12  col-md-4 col-lg-3" data-aos="fade-up">
     <div class="card">
         <div class="row m-l-0">
-        <div class="col-sm-4">
+        <div class="col-4">
           <img src=${skillList[i].imageUrl}
             class="skill-image rounded-start" 
             
             alt="..."
           />
         </div>
-        <div class="col-sm-8  card-body">
+        <div class="col-8  card-body">
        
             <h4 class="card-title">${skillList[i].skillName}</h4>
      
