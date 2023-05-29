@@ -166,7 +166,7 @@ var skillList =[
     },
      {
         skillName:"Asp.net Core",
-        imageUrl:"assets/img/portfolio/skills/.netcore.png"
+        imageUrl:"assets/img/portfolio/skills/netcore.png"
     },
     {
         skillName:"SQL",
