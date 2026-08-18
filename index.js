@@ -239,7 +239,6 @@ function loadProjectDetail() {
 function addProjectIntoTheProfolio(){
  //#region adding project into the portfolio section from projectList array
  let portfolioSection = document.getElementById("portfolio-section");
- if (!portfolioSection) return;
  let portfolioSectionHtml = "";
  for (let i = 0; i < projectList?.length; i++) {
      let projectInfo = projectList[i];
@@ -267,12 +266,22 @@ function addSkillsIntoSkillSection(){
     let skillSections = document.getElementById("skill-sections");
     let skillListHtml ="";
    for(let i=0;i<skillList?.length;i++){
-    skillListHtml += `<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
-    <div class="skill-card">
-      <div class="skill-icon">
-        <img src=${skillList[i].imageUrl} alt="${skillList[i].skillName}" />
+    skillListHtml += `<div class="col-sm-12  col-md-4 col-lg-3" data-aos="fade-up">
+    <div class="card">
+        <div class="row m-l-0">
+        <div class="col-4">
+          <img src=${skillList[i].imageUrl}
+            class="skill-image rounded-start" 
+            
+            alt="..."
+          />
+        </div>
+        <div class="col-8  card-body">
+       
+            <h4 class="card-title">${skillList[i].skillName}</h4>
+     
+        </div>
       </div>
-      <h4 class="skill-name">${skillList[i].skillName}</h4>
     </div>
   </div>`
    }
