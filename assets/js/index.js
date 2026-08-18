@@ -239,6 +239,7 @@ function loadProjectDetail() {
 function addProjectIntoTheProfolio(){
  //#region adding project into the portfolio section from projectList array
  let portfolioSection = document.getElementById("portfolio-section");
+     if (!portfolioSection) return;
  let portfolioSectionHtml = "";
  for (let i = 0; i < projectList?.length; i++) {
      let projectInfo = projectList[i];
