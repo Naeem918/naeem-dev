@@ -1,0 +1,443 @@
+/*--------------------------------------------------------------
+# Design tokens
+--------------------------------------------------------------*/
+:root {
+  --ink: #14161a;
+  --muted: #667085;
+  --surface: #ffffff;
+  --surface-alt: #f6f7f9;
+  --border: #e7e8ec;
+  --accent: #4f46e5;
+  --accent-light: #6366f1;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --sidebar-bg: #0f1115;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 10px 30px rgba(16, 24, 40, 0.08);
+  --transition: 0.25s ease;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Inter", "Open Sans", sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", "Raleway", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d8dd;
+  border-radius: 8px;
+}
+
+section {
+  padding: 70px 0;
+}
+
+.section-bg {
+  background: var(--surface-alt);
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  background: var(--ink);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+}
+
+/*--------------------------------------------------------------
+# Mobile nav toggle
+--------------------------------------------------------------*/
+.mobile-nav-toggle {
+  background: var(--ink);
+  border-radius: var(--radius-sm);
+}
+
+/*--------------------------------------------------------------
+# Sidebar header
+--------------------------------------------------------------*/
+#header {
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--sidebar-border);
+  padding: 0 20px;
+}
+
+#header .profile img {
+  width: 110px;
+  margin: 32px auto 16px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+#header .profile h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+#header .profile .social-links a {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#header .profile .social-links a:hover {
+  background: var(--accent);
+}
+
+/*--------------------------------------------------------------
+# Navigation menu
+--------------------------------------------------------------*/
+.nav-menu {
+  padding: 28px 0 0 0;
+}
+
+.nav-menu a,
+.nav-menu a:focus {
+  color: #9aa1b0;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  margin-bottom: 4px;
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
+  color: #565a68;
+}
+
+.nav-menu a:hover,
+.nav-menu li:hover > a {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+  background: var(--accent-soft);
+  color: #fff;
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover > a i {
+  color: var(--accent-light);
+}
+
+/*--------------------------------------------------------------
+# Hero
+--------------------------------------------------------------*/
+#hero:before {
+  background: linear-gradient(180deg, rgba(10, 12, 16, 0.25), rgba(10, 12, 16, 0.7));
+}
+
+#hero h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 58px;
+}
+
+#hero p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+#hero p span {
+  border-bottom-color: var(--accent-light);
+}
+
+/*--------------------------------------------------------------
+# Section titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: 36px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  padding-bottom: 16px;
+  color: #1c2434;
+}
+
+.section-title h2::after {
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.section-title p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/*--------------------------------------------------------------
+# Skills cards
+--------------------------------------------------------------*/
+.skill-card {
+  height: 100%;
+  padding: 28px 16px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+.skill-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+}
+
+.skill-icon img {
+  max-width: 65%;
+  max-height: 65%;
+  object-fit: contain;
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Resume / timeline
+--------------------------------------------------------------*/
+.resume .resume-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.resume .resume-item {
+  border-left: 2px solid var(--border);
+  padding: 0 0 28px 22px;
+}
+
+.resume .resume-item::before {
+  width: 12px;
+  height: 12px;
+  left: -7px;
+  border: 2px solid var(--accent);
+  background: var(--surface);
+}
+
+.resume .resume-item h4 {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.resume .resume-item h5 {
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 20px;
+  padding: 5px 14px;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.resume-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio-image {
+  height: 220px !important;
+  width: 100%;
+  object-fit: cover;
+}
+
+.portfolio #portfolio-flters {
+  background: var(--surface-alt);
+  border-radius: 30px;
+  box-shadow: none;
+  padding: 6px 8px;
+}
+
+.portfolio #portfolio-flters li {
+  border-radius: 20px;
+  padding: 9px 18px 9px;
+  font-weight: 600;
+  text-transform: none;
+  transition: all var(--transition);
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.portfolio .portfolio-wrap {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.portfolio .portfolio-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  background: rgba(79, 70, 229, 0.82);
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  background: var(--accent);
+}
+
+.portfolio .portfolio-wrap .portfolio-links a + a {
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/*--------------------------------------------------------------
+# Portfolio details
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  border-radius: var(--radius);
+}
+
+.portfolio-details .portfolio-info {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info,
+.contact .php-email-form {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.contact .info i {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.contact .info h4 {
+  color: var(--ink);
+}
+
+.contact .info p {
+  color: var(--muted);
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+  background: var(--accent);
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+  outline: none;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 12px 28px;
+  font-weight: 600;
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: var(--accent);
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: var(--sidebar-bg);
+}
